@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header'); -%>
+  <body>
+    <%- include('layouts/navbar'); -%> …
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <% for (var i = 0; i < blogposts.length; i++) { %>
+          <div class="post-preview">
+            <a href="/post"><%= blogposts[i]._id%></a>
+            <a href="post.html">
+              <h2 class="post-title"><%= blogposts[i].title %></h2>
+              <h3 class="post-subtitle"><%= blogposts[i].body %></h3>
+            </a>
+            <p class="post-meta">
+              Posted by
+              <a href="#"><%= blogposts[i].userid.username %></a>
+              on September 24, 2019
+            </p>
+          </div>
+          <hr />
+          <% } %>
+          <!-- Pager -->
+          …
+        </div>
+      </div>
+    </div>
+    <hr />
+    <%- include('layouts/footer'); -%> <%- include('layouts/scripts'); -%>
+  </body>
+</html>
